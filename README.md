@@ -222,5 +222,16 @@ vi ~/.zshrc
 ![ImageInitIterm](https://raw.githubusercontent.com/sirius1024/pubimgs/master/blogs/iterm2/16.png)
 
 有同学说补全命令的字体不太清晰，与背景颜色太过相近，其实可以自己调整一下字体颜色。
-
 Preferences -> Profiles -> Colors 中有Foreground是标准字体颜色，ANSI Colors中Bright的第一个是补全的字体颜色。
+
+
+为了能显示字符图标，我们需要安装Nerd Fonts   通过Brew 安装：   
+`brew install --cask font-hack-nerd-font`
+- 安装Powerlevel10k 我们前面装了Oh my zsh, 所以可以直接这样装：   
+`git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
+- 下好后记得打开配置文件修改成这个主题：   
+`ZSH_THEME="powerlevel10k/powerlevel10k"`   
+> 首次打开时会自动弹出配置窗口，按自已喜好配置就行。   
+- 如果配置好后后面觉得不喜欢想更改配置的话也可以随时运行这个来修改配置项：   
+`p10k configure`
+
