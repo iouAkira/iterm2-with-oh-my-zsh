@@ -224,7 +224,7 @@ vi ~/.zshrc
 有同学说补全命令的字体不太清晰，与背景颜色太过相近，其实可以自己调整一下字体颜色。
 Preferences -> Profiles -> Colors 中有Foreground是标准字体颜色，ANSI Colors中Bright的第一个是补全的字体颜色。
 
-
+#### 安装Powerlevel10k
 为了能显示字符图标，我们需要安装Nerd Fonts   通过Brew 安装：   
 `brew install --cask font-hack-nerd-font`
 - 安装Powerlevel10k 我们前面装了Oh my zsh, 所以可以直接这样装：   
@@ -235,3 +235,24 @@ Preferences -> Profiles -> Colors 中有Foreground是标准字体颜色，ANSI C
 - 如果配置好后后面觉得不喜欢想更改配置的话也可以随时运行这个来修改配置项：   
 `p10k configure`
 
+
+#### 安装FZF
+我比较推荐通过Github 安装。出的问题最少。   
+`git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install`
+
+装完之后主要有三个快捷键各其他一些补全功能： 
+- `Ctrl + T` 模糊查找文件路径
+- `Ctrl + R` 模糊查找使用过的命令
+- `Alt + C`模糊查找并进入一个路径
+
+另外在Mac 下Option + C 可能会打出来个“ç”而不是像Alt 一样的功能。
+用Zsh 的话可以加个绑定：
+```
+# ~/.zshrc
+bindkey "ç" fzf-cd-widget
+```
+如果 ** 补全被Oh-my-zsh 占了可以显式加个：
+```
+# ~/.zshrc
+export FZF_COMPLETION_TRIGGER='**'
+```
